@@ -1,38 +1,39 @@
 <template>
     <div>
-        <!-- 面包屑导航 -->
-        <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item>用户管理</el-breadcrumb-item>
-        <el-breadcrumb-item>用户列表</el-breadcrumb-item>
-        </el-breadcrumb>
-        <!-- 卡片视图 -->
-        <el-card >
-            <!-- 搜索添加 -->
-            
-            <el-row :gutter="20">
-                <el-col :span="11">
-                    <el-input placeholder="请输入内容" >
-                        <el-button slot="append" icon="el-icon-search"></el-button>
-                    </el-input>
-                </el-col>
-                <el-col :span="4">
-                    <el-button type="primary">添加用户</el-button>
-                </el-col>
-            </el-row>
-        </el-card>
-
     </div>
 </template>
 
 <script>
-export default {
-    
-}
+    export default {
+
+    }
 </script>
 
-<style lang="less" scoped>
-    .el-card{
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+<style scoped>
+    div{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: url("../assets/20200109152754773.png") no-repeat;
+        animation:  bear .4s steps(8) infinite, move 3s linear forwards;
+        border-color: #ccc;
+        top:50%;
+    }
+    @keyframes bear {
+        0%{
+            background-position: 0 0;
+        }
+        100%{
+            background-position: -1600px 0;
+        }
+    }
+
+    @keyframes move {
+        0% {
+            left: 0;
+        }
+        100% {
+            left: 50%;
+        }
     }
 </style>
