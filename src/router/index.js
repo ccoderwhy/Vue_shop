@@ -16,29 +16,30 @@ import Report from '../components/report/Report.vue'
 Vue.use(VueRouter)
 
 const routes = [
-{
- path:'/',redirect:'/login'
-},
-{
-  path:'/login',
-  component:Login
-},
-{
-  path:'/home',
-  component:Home,
-  redirect:'/users',
-  children:[
-    {path:'/users', component:Users},
-    {path:'/roles', component:Roles},
-    {path:'/rights', component:Rights},
-    {path:'/categories', component:Cate},
-    {path:'/params', component:Params},
-    {path:'/goods', component:List},
-    {path:'/goods/add', component:Add},
-    {path:'/orders', component:Order},
-    {path:'/reports', component:Report},
-]
-},
+  {
+    path:'/',redirect:'/login'
+  },
+  {
+    path:'/login',
+    component:Login
+  },
+  {
+    path:'/home',
+    component:Home,
+    redirect:'/welcome',
+    children:[
+      { path: '/welcome', component: Welcome },
+      {path:'/users', component:Users},
+      {path:'/roles', component:Roles},
+      {path:'/rights', component:Rights},
+      {path:'/categories', component:Cate},
+      {path:'/params', component:Params},
+      {path:'/goods', component:List},
+      {path:'/goods/add', component:Add},
+      {path:'/orders', component:Order},
+      {path:'/reports', component:Report},
+    ]
+  },
 
 ]
 
